@@ -43,14 +43,20 @@ git commit -m 'персональные коментарии' - comment c пер
 	Нажмите Generate new token (classic).
 	Укажите название, выберите срок действия и отметьте галочкой область repo (управление репозиториями).
 	Нажмите Generate token и обязательно скопируйте длинный код (он покажется только один раз).
-	
 	Вставьте его в терминал:Когда git push запросит пароль, вставьте скопированный токен и нажмите Enter.
-Как сохранить токен, чтобы не вводить его каждый раз:
-	В Windows включите менеджер учетных данных:
-		bashgit config --global credential.helper wincre
-	В Linux (сохранит в памяти на 15 минут):
-		bashgit config --global credential.helper cache
+	Как сохранить токен, чтобы не вводить его каждый раз:
+		В Windows включите менеджер учетных данных:
+			bashgit config --global credential.helper wincre
+		В Linux (сохранит в памяти на 15 минут):
+			bashgit config --global credential.helper cache
 
 Перейти на SSH (Самый удобный способ)
 	Сгенерируйте SSH-ключ (если его еще нет):
 		ssh-keygen -t ed25519 -C "your_email@example.com"
+	Добавьте ключ на GitHub:
+		Скопируйте содержимое созданного публичного файла (например, cat ~/.ssh/id_ed25519.pub).
+	Зайдите на GitHub в Settings → SSH and GPG keys → New SSH key.
+		Вставьте ключ и сохраните.
+	Переключите репозиторий с HTTPS на SSH:
+		git remote set-url origin git@github.com:ИМЯ_ПОЛЬЗОВАТЕЛЯ/ИМЯ_РЕПОЗИТОРИЯ.git
+
