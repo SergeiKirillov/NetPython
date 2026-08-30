@@ -148,3 +148,6 @@ git tag - просмотр всех тэгов
 $ git config --global alias.ci commit
 $ git config --global alias.st status
 
+
+
+# -
