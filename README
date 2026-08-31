@@ -107,6 +107,16 @@ git commit --amend --all. - это обновляет исходную фикс�
 	Переключите репозиторий с HTTPS на SSH:
 		git remote set-url origin git@github.com:ИМЯ_ПОЛЬЗОВАТЕЛЯ/ИМЯ_РЕПОЗИТОРИЯ.git
 
+^. Утилита - статус репозитория
+	Выполнить команды
+		cd ~
+		git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+	А затем добавить в конец файла .bashrc такие строки:
+		GIT_PROMPT_ONLY_IN_REPO=1
+		source ~/.bash-git-prompt/gitprompt.sh
+	Для того, чтобы изменения применились, перезапустить bash:
+	exec bash
+
 ## Удаление репозитория
 git rm --cached <ИмяФайла> - удаление файла из индекса, но он не удаляется физически. УДАЛЯЕТ НА GITHUB, но оставляет локально 
 git rm log/\*.log - Удаляет все файлы из директории log  и имеющию расширение *.log
